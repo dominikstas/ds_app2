@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Dominik - About Me"
+  description="Learn more about Dominik, his background, skills, and interests in web development and technology."
+>
+  <section class="about-header">
+    <h1>About Me</h1>
+  </section>
+
+  <section class="about-content">
+    <div class="about-image">
+      <img src="/images/dominik-about.jpg" alt="Dominik" />
+    </div>
+    <div class="about-text">
+      <h2>Hi, I'm Dominik</h2>
+      <p>
+        I'm a passionate web developer with a keen interest in creating elegant,
+        efficient, and user-friendly websites. With several years of experience
+        in the field, I've worked on a variety of projects ranging from small
+        business websites to large-scale web applications.
+      </p>
+      <p>My expertise includes:</p>
+      <ul>
+        <li>Front-end development (HTML, CSS, JavaScript, React)</li>
+        <li>Back-end development (Node.js, Express, Python)</li>
+        <li>Database management (MongoDB, PostgreSQL)</li>
+        <li>UI/UX design principles</li>
+        <li>SEO optimization</li>
+      </ul>
+      <p>
+        When I'm not coding, you can find me exploring new technologies,
+        contributing to open-source projects, or sharing my knowledge through
+        blog posts and tutorials.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f0f4f8;
+  }
+
+  .about-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-content {
+    display: flex;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-image {
+    flex: 1;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-text {
+    flex: 2;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+  }
+
+  .about-text ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+  }
+</style>

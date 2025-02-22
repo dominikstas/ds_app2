@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+// In a real project, you'd fetch this data from a CMS or API
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "A full-featured online store built with React and Node.js",
+    image: "/images/project1.jpg",
+    link: "/work/e-commerce-platform",
+  },
+  {
+    title: "Task Management App",
+    description:
+      "A productivity tool for teams, built with Vue.js and Firebase",
+    image: "/images/project2.jpg",
+    link: "/work/task-management-app",
+  },
+  {
+    title: "Portfolio Website",
+    description: "A responsive portfolio website built with Astro and React",
+    image: "/images/project3.jpg",
+    link: "/work/portfolio-website",
+  },
+  // Add more projects here
+];
+---
+
+<Layout
+  title="Dominik - Work"
+  description="Explore Dominik's portfolio of web development projects and applications."
+>
+  <section class="work-header">
+    <h1>My Work</h1>
+    <p>A showcase of my latest projects and applications</p>
+  </section>
+
+  <section class="projects">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </section>
+</Layout>
+
+<style>
+  .work-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f0f4f8;
+  }
+
+  .work-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .work-header p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>

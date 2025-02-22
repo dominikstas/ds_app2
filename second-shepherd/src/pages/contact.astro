@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Dominik - Contact"
+  description="Get in touch with Dominik for web development projects, collaborations, or just to say hello."
+>
+  <section class="contact-header">
+    <h1>Contact Me</h1>
+    <p>Have a question or want to work together? Get in touch!</p>
+  </section>
+
+  <section class="contact-form">
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+</Layout>
+
+<style>
+  .contact-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f0f4f8;
+  }
+
+  .contact-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-header p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    // In a real project, you'd send this data to a server
+    console.log("Form data:", data);
+
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    alert("Thank you for your message! I'll get back to you soon.");
+    form.reset();
+  });
+</script>

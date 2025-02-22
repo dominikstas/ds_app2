@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogPostCard from "../components/BlogPostCard.astro";
+
+// In a real project, you'd fetch this data from a CMS or API
+const blogPosts = [
+  {
+    title: "Getting Started with Astro",
+    excerpt: "Learn how to build fast, modern websites with Astro...",
+    date: "2023-05-15",
+    slug: "getting-started-with-astro",
+  },
+  {
+    title: "The Future of Web Development",
+    excerpt: "Exploring upcoming trends and technologies in web development...",
+    date: "2023-05-10",
+    slug: "future-of-web-development",
+  },
+  // Add more blog posts here
+];
+---
+
+<Layout
+  title="Dominik - Blog"
+  description="Read Dominik's latest thoughts and insights on web development, technology, and more."
+>
+  <section class="blog-header">
+    <h1>Blog</h1>
+    <p>
+      Thoughts, insights, and experiences from my journey in web development and
+      technology.
+    </p>
+  </section>
+
+  <section class="blog-posts">
+    {blogPosts.map((post) => <BlogPostCard post={post} />)}
+  </section>
+</Layout>
+
+<style>
+  .blog-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f0f4f8;
+  }
+
+  .blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>
